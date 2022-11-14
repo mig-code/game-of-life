@@ -8,7 +8,7 @@ export function createBoard(columns, rows) {
             if (i === 0 || i === rows - 1 || j === 0 || j === columns - 1) {
                 board[i].push(null);
             } else {
-                board[i].push(1);
+                board[i].push(Math.floor(Math.random() * 2));
             }
         }
     }
