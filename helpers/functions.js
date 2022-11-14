@@ -14,3 +14,17 @@ export function createBoard(columns, rows) {
     }
     return board;
 }
+
+export function countNearCells(columns, row, board) {
+    let count = 0;
+    count +=
+        board[row - 1][columns - 1] +
+        board[row - 1][columns] +
+        board[row - 1][columns + 1] +
+        board[row][columns - 1] +
+        board[row][columns + 1] +
+        board[row + 1][columns - 1] +
+        board[row + 1][columns] +
+        board[row + 1][columns + 1];
+    return count;
+}
