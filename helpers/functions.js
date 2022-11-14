@@ -14,6 +14,16 @@ export function createBoard(columns, rows) {
     }
     return board;
 }
+export function copyBoard(board) {
+    const boardCopy = [];
+    for (let i = 0; i < board.length; i++) {
+        boardCopy.push([]);
+        for (let j = 0; j < board[i].length; j++) {
+            boardCopy[i].push(board[i][j]);
+        }
+    }
+    return boardCopy;
+}
 
 export function countNearCells(columns, row, board) {
     let count = 0;
@@ -29,12 +39,22 @@ export function countNearCells(columns, row, board) {
     return count;
 }
 
-export function copyBoard(board) {
-    const boardCopy = [];
-    for (let i = 0; i < board.length; i++) {
-        boardCopy.push([]);
-        for (let j = 0; j < board[i].length; j++) {
-            boardCopy[i].push(board[i][j]);
+export function checkIfCellIsAlive(currentState, counter) {
+    if (currentState === 0 && counter === 3) {
+        return 1;
+    }
+    if (currentState === 1 && (counter === 2 || counter === 3)) {
+        return 1;
+    }
+    return 0;
+}
+
+export function getNextBoard(board) {
+    const boardCopy = copyBoard(board);
+    for (let i = 1; i < board.length - 1; i++) {
+        for (let j = 1; j < board[i].length - 1; j++) {
+            const counter = countNearCells(board, j, i);
+            boardCopy[i][j] = checkIfCellIsAlive(board[i][j], counter);
         }
     }
     return boardCopy;
