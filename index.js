@@ -1,11 +1,23 @@
 import { createBoard, getNextBoard, renderBoard } from './helpers/functions.js';
 
-const columns = 3;
-const rows = 3;
-let board = createBoard(columns, rows);
+// Config section
+const columns = 6;
+const rows = 6;
+const maxGenerations = 10;
+const intervalTime = 1000;
 
-renderBoard(board);
-board = getNextBoard(board);
-renderBoard(board);
-board = getNextBoard(board);
-renderBoard(board);
+// Init section
+let board = createBoard(columns, rows);
+let intervalCounter = 0;
+
+// Render board
+
+const runGame = setInterval(() => {
+    renderBoard(board);
+    board = getNextBoard(board);
+
+    if (intervalCounter === maxGenerations) {
+        clearInterval(runGame);
+    }
+    intervalCounter += 1;
+}, intervalTime);
