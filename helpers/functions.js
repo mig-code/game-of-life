@@ -28,3 +28,14 @@ export function countNearCells(columns, row, board) {
         board[row + 1][columns + 1];
     return count;
 }
+
+export function copyBoard(board) {
+    const boardCopy = [];
+    for (let i = 0; i < board.length; i++) {
+        boardCopy.push([]);
+        for (let j = 0; j < board[i].length; j++) {
+            boardCopy[i].push(board[i][j]);
+        }
+    }
+    return boardCopy;
+}
