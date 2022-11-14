@@ -25,7 +25,7 @@ export function copyBoard(board) {
     return boardCopy;
 }
 
-export function countNearCells(columns, row, board) {
+export function countNearCells(board, columns, row) {
     let count = 0;
     count +=
         board[row - 1][columns - 1] +
@@ -58,4 +58,14 @@ export function getNextBoard(board) {
         }
     }
     return boardCopy;
+}
+export function renderBoard(board) {
+    const boardToRender = [];
+    for (let i = 1; i < board.length - 1; i++) {
+        boardToRender.push([]);
+        for (let j = 1; j < board[i].length - 1; j++) {
+            boardToRender[i - 1].push(board[i][j]);
+        }
+    }
+    console.table(boardToRender);
 }

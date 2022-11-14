@@ -1,6 +1,11 @@
-import { createBoard } from './helpers/functions.js';
+import { createBoard, getNextBoard, renderBoard } from './helpers/functions.js';
 
-const columns = 9;
-const rows = 9;
-const board = createBoard(columns, rows);
-console.table(board);
+const columns = 3;
+const rows = 3;
+let board = createBoard(columns, rows);
+
+renderBoard(board);
+board = getNextBoard(board);
+renderBoard(board);
+board = getNextBoard(board);
+renderBoard(board);
