@@ -8,7 +8,8 @@
         "prepare": "husky install",
         "lint": "eslint .",
         "test": "jest --watchAll --coverage",
-        "test:prod": "jest --watchAll --coverage --watchAll=false"
+        "test:prod": "jest --watchAll --coverage --watchAll=false",
+        "sass":"sass --watch scss:css"
     },
     "prettier": {
         "singleQuote": true
@@ -17,8 +18,8 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@types/jest": "^29.2.1",
         "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+        "@types/jest": "^29.2.1",
         "eslint": "^8.27.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard": "^17.0.0",
@@ -36,5 +37,8 @@
                 ]
             }
         }
+    },
+    "dependencies": {
+        "sass": "^1.56.1"
     }
 }
