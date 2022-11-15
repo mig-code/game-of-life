@@ -4,6 +4,7 @@ import {
     copyBoard,
     checkIfCellIsAlive,
     getNextBoard,
+    renderBoard,
 } from './functions.js';
 
 describe('Given createBoard function', () => {
@@ -30,6 +31,13 @@ describe('Given createBoard function', () => {
         // Assert
         expect(result).toBeGreaterThanOrEqual(0);
         expect(result).toBeLessThanOrEqual(1);
+    });
+    test('Render board with null in borders', () => {});
+    test('Length should be 6 +2', () => {
+        const board = createBoard(columns, rows);
+        const expected = 8;
+        const result = board.length;
+        expect(result).toEqual(expected);
     });
 });
 describe('Given copyBoard function', () => {
@@ -172,6 +180,27 @@ describe('Given getNextBoard function', () => {
             countNearCells(testBoard, 1, 2)
         );
         // Assert
+        expect(result).toEqual(expected);
+    });
+});
+
+describe('Given renderBoard function ', () => {
+    const columns = 6;
+    const rows = 6;
+    const board = createBoard(columns, rows);
+    const nextBoard = renderBoard(board);
+    test('Return a board with random 0 or 1 in cells and nulls in borders test [1][1]', () => {
+        // Act
+        const result = nextBoard[0][0];
+        // Assert
+        expect(result).toBeGreaterThanOrEqual(0);
+        expect(result).toBeLessThanOrEqual(1);
+    });
+
+    test('Render board without null in borders', () => {});
+    test('Length should be 6', () => {
+        const expected = 6;
+        const result = nextBoard.length;
         expect(result).toEqual(expected);
     });
 });
