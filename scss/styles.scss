@@ -79,3 +79,26 @@ body {
 h1 {
   color: green;
 }
+
+.grid-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: no-wrap;
+}
+
+.cell {
+  height: 0.8rem;
+  width: 0.8rem;
+  margin: 0.05rem;
+  border: 1px solid black;
+}
+
+.cell--alive {
+  font-size: 0.5rem;
+}
+.cell--dead {
+  background-color: aquamarine;
+}
