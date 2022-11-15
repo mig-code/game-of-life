@@ -6,20 +6,20 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 /*
   2. Remove default margin
 */
 * {
-    margin: 0;
+  margin: 0;
 }
 /*
   3. Allow percentage-based heights in the application
 */
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 /*
   Typographic tweaks!
@@ -27,12 +27,12 @@ body {
   5. Improve text rendering
 */
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
 
-    -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 /*
   6. Improve media defaults
@@ -42,8 +42,8 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
@@ -52,7 +52,7 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 /*
   8. Avoid text overflows
@@ -64,18 +64,18 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover,
 a:visited {
-    color: black;
+  color: black;
 }
 body {
-    background-color: #f5f5;
+  background-color: #f5f5;
 }
 h1 {
-    color: blue;
+  color: green;
 }
