@@ -26,3 +26,19 @@ insert_final_newline = true;
 [*.yml]
 
 indent_size = 2
+
+[*.scss]
+indent_size = 2
+
+[*.css]
+
+indent_size = 2
+end_of_line = lf
+
+[*.map]
+
+insert_final_newline = false;
+
+
+
+
