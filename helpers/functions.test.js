@@ -3,12 +3,14 @@ import {
     countNearCells,
     copyBoard,
     checkIfCellIsAlive,
+    getNextBoard,
+    renderBoard,
 } from './functions.js';
 
 describe('Given createBoard function', () => {
     const columns = 6;
     const rows = 6;
-    test('Return a board with all 1 and nulls in borders test [0][0]', () => {
+    test('Return a board with random 0 or 1 in cells and nulls in borders test [0][0]', () => {
         const board = createBoard(columns, rows);
 
         // Arrange
@@ -19,15 +21,22 @@ describe('Given createBoard function', () => {
         // Assert
         expect(result).toEqual(expected);
     });
-    test('Return a board with all 1 and nulls in borders test [1][1]', () => {
+    test('Return a board with random 0 or 1 in cells and nulls in borders test [1][1]', () => {
         const board = createBoard(columns, rows);
 
         // Arrange
-        const expected = 1;
 
         // Act
         const result = board[1][1];
         // Assert
+        expect(result).toBeGreaterThanOrEqual(0);
+        expect(result).toBeLessThanOrEqual(1);
+    });
+    test('Render board with null in borders', () => {});
+    test('Length should be 6 +2', () => {
+        const board = createBoard(columns, rows);
+        const expected = 8;
+        const result = board.length;
         expect(result).toEqual(expected);
     });
 });
@@ -60,27 +69,29 @@ describe('Given copyBoard function', () => {
 });
 
 describe('Given countNearCells function', () => {
-    const columns = 6;
-    const rows = 6;
-    test('Return sum of all near cells in [0][0]', () => {
-        const board = createBoard(columns, rows);
+    const testBoard = [
+        [null, null, null, null, null],
+        [null, 1, 1, 1, null],
+        [null, 1, 1, 1, null],
+        [null, 1, 1, 1, null],
+        [null, null, null, null, null],
+    ];
 
+    test('Return sum of all near cells in [0][0]', () => {
         // Arrange
         const expected = 3;
 
         // Act
-        const result = countNearCells(1, 1, board);
+        const result = countNearCells(testBoard, 1, 1);
         // Assert
         expect(result).toEqual(expected);
     });
     test('Return sum of all near cells in [2][2]', () => {
-        const board = createBoard(columns, rows);
-
         // Arrange
         const expected = 8;
 
         // Act
-        const result = countNearCells(2, 2, board);
+        const result = countNearCells(testBoard, 2, 2);
         // Assert
         expect(result).toEqual(expected);
     });
@@ -133,6 +144,63 @@ describe('Given checkIfCellIsAlive function', () => {
         // Act
         const result = checkIfCellIsAlive(currentState, count);
         // Assert
+        expect(result).toEqual(expected);
+    });
+});
+
+describe('Given getNextBoard function', () => {
+    const testBoard = [
+        [null, null, null, null, null],
+        [null, 1, 1, 1, null],
+        [null, 1, 1, 1, null],
+        [null, 1, 1, 1, null],
+        [null, null, null, null, null],
+    ];
+    test('In copy board [1][1] counterCells should be 1', () => {
+        const board = getNextBoard(testBoard);
+        // Arrange
+        const expected = board[1][1];
+
+        // Act
+        const result = checkIfCellIsAlive(
+            testBoard[1][1],
+            countNearCells(testBoard, 1, 1)
+        );
+        // Assert
+        expect(result).toEqual(expected);
+    });
+    test('In copy board [1][2] counterCells should be 0', () => {
+        const board = getNextBoard(testBoard);
+        // Arrange
+        const expected = board[1][2];
+
+        // Act
+        const result = checkIfCellIsAlive(
+            testBoard[1][2],
+            countNearCells(testBoard, 1, 2)
+        );
+        // Assert
+        expect(result).toEqual(expected);
+    });
+});
+
+describe('Given renderBoard function ', () => {
+    const columns = 6;
+    const rows = 6;
+    const board = createBoard(columns, rows);
+    const nextBoard = renderBoard(board);
+    test('Return a board with random 0 or 1 in cells and nulls in borders test [1][1]', () => {
+        // Act
+        const result = nextBoard[0][0];
+        // Assert
+        expect(result).toBeGreaterThanOrEqual(0);
+        expect(result).toBeLessThanOrEqual(1);
+    });
+
+    test('Render board without null in borders', () => {});
+    test('Length should be 6', () => {
+        const expected = 6;
+        const result = nextBoard.length;
         expect(result).toEqual(expected);
     });
 });

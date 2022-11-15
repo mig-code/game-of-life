@@ -68,4 +68,6 @@ export function renderBoard(board) {
         }
     }
     console.table(boardToRender);
+    return boardToRender;
+    
 }
