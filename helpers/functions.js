@@ -59,7 +59,7 @@ export function getNextBoard(board) {
     }
     return boardCopy;
 }
-export function renderBoard(board) {
+export function getBoardtoRender(board) {
     const boardToRender = [];
     for (let i = 1; i < board.length - 1; i++) {
         boardToRender.push([]);
@@ -69,5 +69,4 @@ export function renderBoard(board) {
     }
     console.table(boardToRender);
     return boardToRender;
-    
 }

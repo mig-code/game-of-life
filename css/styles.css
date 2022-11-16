@@ -15,6 +15,10 @@
   margin: 0;
 }
 
+p {
+  margin: 1rem;
+}
+
 /*
   3. Allow percentage-based heights in the application
 */
@@ -80,12 +84,157 @@ a:visited {
   color: black;
 }
 
+/* GLOBAL STYLES */
 body {
-  background-color: rgba(255, 85, 255, 0.3333333333);
+  font-family: "Inconsolata", monospace;
 }
 
-h1 {
-  color: green;
+/* HEADER */
+.top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.top__title {
+  color: #000000;
+  font-weight: 800;
+  font-size: 2rem;
+  text-shadow: 2px 2px 0 #FF66B3;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-nav__shapes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #34D6FF;
+  font-family: "Inconsolata", monospace;
+  color: #000000;
+  font-weight: 800;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0.1rem 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  box-shadow: 2px 2px 0 #FF66B3;
+  cursor: pointer;
+}
+
+.btn--shape {
+  background-color: #34D6FF;
+  margin: 0.1rem 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.btn:hover {
+  background-color: #FF66B3;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 0 #000000;
+}
+
+.btn:disabled {
+  background-color: #FF66B3;
+  cursor: none;
+}
+
+.grid-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  background-color: #000000;
+  margin: 1rem 2rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  box-shadow: #FF66B3 0px 3px 8px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: no-wrap;
+}
+
+.cell {
+  height: 0.6rem;
+  width: 0.6rem;
+  margin: 0.05rem;
+  border: 1px solid #000000;
+  border-radius: 20%;
+}
+
+.cell--alive {
+  font-size: 0.5rem;
+  background-color: #FF66B3;
+}
+
+.about-game {
+  margin: 2rem 1rem;
+}
+.about-game__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #000000;
+  text-shadow: 1px 1px 0 #FF66B3;
+}
+
+.footer {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 2rem;
+  padding-bottom: 3rem;
+  color: #000000;
+}
+.footer__link {
+  color: #FF66B3;
+  margin: 0 0.5rem;
+  text-decoration: underline;
+}
+.footer__link:hover {
+  color: #000000;
+}
+
+@media (min-width: 600px) {
+  body {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+  .top__title {
+    font-size: 3rem;
+  }
+  .btn--shape {
+    font-size: 1rem;
+  }
+  .cell {
+    height: 0.9rem;
+    width: 0.9rem;
+    margin: 0.05rem;
+    border: 1px solid #000000;
+    border-radius: 20%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,9 +6,86 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Game of life</title>
         <link rel="stylesheet" href="./css/styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;800&display=swap"
+            rel="stylesheet"
+        />
     </head>
+
     <body>
-        <h1>GAME OF LIFE</h1>
+        <hader class="top">
+            <h1 class="top__title">GAME OF LIFE</h1>
+            <nav class="top-nav">
+                <div class="options-nav">
+                    <button class="btn btn--start">Start</button>
+                    <button class="btn btn--stop">Stop</button>
+                    <button class="btn btn--reset">Reset</button>
+                </div>
+            </nav>
+        </hader>
+
+        <section class="grid-section">
+            <div class="grid-container" id="grid"></div>
+        </section>
+        <div class="top-nav__shapes">
+            <button class="btn btn--shape btn--smile">Smile</button>
+            <button class="btn btn--shape btn--isdi">Isdi</button>
+            <button class="btn btn--shape btn--figure">Figure</button>
+            <button class="btn btn--shape btn--random">Random</button>
+            <button class="btn btn--shape btn--draw">Draw</button>
+        </div>
+        <section class="about-game">
+            <h2 class="about-game__title">Funcionamiento</h2>
+            <div class="about-game__text">
+                <p>
+                    Se trata de un juego de cero jugadores, lo que quiere decir
+                    que su evolución está determinada por el estado inicial y no
+                    necesita ninguna entrada de datos posterior.
+                </p>
+                <p>
+                    El "tablero de juego" es una malla plana formada por
+                    cuadrados (las "células") que se extiende por el infinito en
+                    todas las direcciones. Por tanto, cada célula tiene 8
+                    células "vecinas", que son las que están próximas a ella,
+                    incluidas las diagonales. Las células tienen dos estados:
+                    están "vivas" o "muertas" (o "encendidas" y "apagadas").
+                </p>
+                <p>
+                    El estado de las células evoluciona a lo largo de unidades
+                    de tiempo discretas (se podría decir que por turnos). El
+                    estado de todas las células se tiene en cuenta para calcular
+                    el estado de las mismas al turno siguiente.
+                </p>
+                <p>
+                    Todas las células se actualizan simultáneamente en cada
+                    turno, siguiendo estas reglas:
+                </p>
+                <ul>
+                    <li>
+                        Una célula muerta con exactamente 3 células vecinas
+                        vivas "nace" (es decir, al turno siguiente estará viva).
+                    </li>
+                    <li>
+                        Una célula viva con 2 o 3 células vecinas vivas sigue
+                        viva, en otro caso muere (por "soledad" o
+                        "superpoblación").
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer class="footer">
+            <a
+                class="footer__link"
+                href="https://github.com/mig-code/202210-W6-miguel-pgomez-"
+            >
+                View code in Github</a
+            ><a
+                class="footer__link"
+                href="https://es.wikipedia.org/wiki/Juego_de_la_vida"
+                >Read more on Wikipedia</a
+            >
+        </footer>
+
         <script src="index.js" type="module"></script>
     </body>
 </html>
