@@ -1,4 +1,5 @@
 # Week 6 - Game of life challenge
+
 ## Conway Game of Life 🦠 !
 
 Deberás de programar el [Juego de la vida de Conway](https://es.wikipedia.org/wiki/Juego_de_la_vida).
@@ -28,7 +29,7 @@ Si quieres probar como funciona para hacerte una idea, puedes probar una versió
 
 ## Milestones
 
-1. ✔️ Programa funcional en JS. Las células se quedan pegadas la pared. 
+1. ✔️ Programa funcional en JS. Las células se quedan pegadas la pared.
 2. Programa 100% testeado.
 3. ✔️ Añadir HTML/CSS.
 4. Modificar JS para que:

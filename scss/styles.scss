@@ -82,8 +82,6 @@ a:visited {
 /* GLOBAL STYLES */
 
 body {
-  font-family: variables.$font-stack;
-
   /*
   Typographic tweaks!
   4. Add accessible line-height
@@ -92,12 +90,13 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   /*
   3. Allow percentage-based heights in the application
 */
   height: 100%;
+
+  font-family: variables.$font-stack;
 }
 
 /* HEADER */
