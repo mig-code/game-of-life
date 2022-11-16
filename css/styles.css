@@ -22,8 +22,7 @@ p {
 /*
   3. Allow percentage-based heights in the application
 */
-html,
-body {
+html {
   height: 100%;
 }
 
@@ -32,14 +31,6 @@ body {
   4. Add accessible line-height
   5. Improve text rendering
 */
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /*
   6. Improve media defaults
 */
@@ -87,6 +78,20 @@ a:visited {
 /* GLOBAL STYLES */
 body {
   font-family: "Inconsolata", monospace;
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  height: 100%;
 }
 
 /* HEADER */
