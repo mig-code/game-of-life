@@ -6,18 +6,16 @@ export function renderBoard(board) {
         row.className = 'board-container__row';
         parentdiv.appendChild(row);
         for (let j = 1; j < board[i].length - 1; j++) {
-            const cellStatus = board[i][j] === 0;
             const childdiv = document.createElement('div');
             childdiv.addEventListener('click', () => {
-                cellStatus ? (board[i][j] = 1) : (board[i][j] = 0);
+                board[i][j] === 0 ? board[i][j] = 1 : board[i][j] = 0;
                 renderBoard(board);
             });
-
             childdiv.className = 'cell';
-            if (!cellStatus) {
+            if (board[i][j] === 1) {
                 childdiv.classList.add('cell--alive');
             }
-            if (cellStatus) {
+            if (board[i][j] === 0) {
                 childdiv.classList.add('cell--dead');
             }
 
