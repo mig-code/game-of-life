@@ -10,7 +10,7 @@ import {
 // Config section
 const columns = 28;
 const rows = 28;
-const intervalTime = 1000;
+const intervalTime = 500;
 let startInterval = null;
 let board = smileBoard;
 
@@ -31,7 +31,6 @@ btnReset.addEventListener('click', () => {
     btnStart.disabled = false;
     board = smileBoard;
     renderBoard(board);
-    console.log('reset');
 });
 const btnSmile = document.querySelector('.btn--smile');
 btnSmile.addEventListener('click', () => {
@@ -62,10 +61,6 @@ btnDraw.addEventListener('click', () => {
     renderBoard(board);
 });
 
-// DOM Actions
-
-// Init section
-
 // On load
 window.onload = () => {
     renderBoard(board);
@@ -75,17 +70,3 @@ function startSimulation() {
     renderBoard(board);
     board = getNextBoard(board);
 }
-
-// Render board in console
-
-// Need to import getBoardToRender
-
-// const runGame = setInterval(() => {
-//     getBoardtoRender(board);
-//     board = getNextBoard(board);
-
-//     if (intervalCounter === maxGenerations) {
-//         clearInterval(runGame);
-//     }
-//     intervalCounter += 1;
-// }, intervalTime);

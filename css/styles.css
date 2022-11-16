@@ -22,8 +22,7 @@ p {
 /*
   3. Allow percentage-based heights in the application
 */
-html,
-body {
+html {
   height: 100%;
 }
 
@@ -32,14 +31,6 @@ body {
   4. Add accessible line-height
   5. Improve text rendering
 */
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /*
   6. Improve media defaults
 */
@@ -86,6 +77,19 @@ a:visited {
 
 /* GLOBAL STYLES */
 body {
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  height: 100%;
   font-family: "Inconsolata", monospace;
 }
 
@@ -97,33 +101,24 @@ body {
   align-items: center;
   margin-top: 0.5rem;
 }
-
 .top__title {
   color: #000000;
   font-weight: 800;
   font-size: 2rem;
   text-shadow: 2px 2px 0 #FF66B3;
 }
-
-.top-nav {
+.top__nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.options-nav {
+.nav-options {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.top-nav__shapes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .btn {
@@ -139,42 +134,42 @@ body {
   box-shadow: 2px 2px 0 #FF66B3;
   cursor: pointer;
 }
-
-.btn--shape {
-  background-color: #34D6FF;
-  margin: 0.1rem 0.3rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.8rem;
-}
-
 .btn:hover {
   background-color: #FF66B3;
   color: #FFFFFF;
   box-shadow: 2px 2px 0 #000000;
 }
-
 .btn:disabled {
-  background-color: #FF66B3;
+  background-color: #16AF8E;
+  box-shadow: none;
   cursor: none;
 }
+.btn:disabled:hover {
+  background-color: #16AF8E;
+  box-shadow: none;
+  cursor: none;
+}
+.btn--shape {
+  margin: 0.1rem 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
 
-.grid-section {
+.board-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.grid-container {
+.board-container {
   background-color: #000000;
   margin: 1rem 2rem;
   padding: 0.3rem;
   border-radius: 0.5rem;
   box-shadow: #FF66B3 0px 3px 8px;
 }
-
-.row {
+.board-container__row {
   display: flex;
-  flex-wrap: no-wrap;
 }
 
 .cell {
@@ -184,10 +179,16 @@ body {
   border: 1px solid #000000;
   border-radius: 20%;
 }
-
 .cell--alive {
   font-size: 0.5rem;
   background-color: #FF66B3;
+}
+
+.nav-shapes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .about-game {

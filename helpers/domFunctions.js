@@ -1,21 +1,23 @@
 export function renderBoard(board) {
-    const parentdiv = document.getElementById('grid');
+    const parentdiv = document.querySelector('.board-container');
     parentdiv.innerHTML = '';
     for (let i = 1; i < board.length - 1; i++) {
         const row = document.createElement('div');
-        row.className = 'row';
+        row.className = 'board-container__row';
         parentdiv.appendChild(row);
         for (let j = 1; j < board[i].length - 1; j++) {
+            const cellStatus = board[i][j] === 0;
             const childdiv = document.createElement('div');
             childdiv.addEventListener('click', () => {
-                board[i][j] === 0 ? (board[i][j] = 1) : (board[i][j] = 0);
+                cellStatus ? (board[i][j] = 1) : (board[i][j] = 0);
                 renderBoard(board);
             });
+
             childdiv.className = 'cell';
-            if (board[i][j] === 1) {
+            if (!cellStatus) {
                 childdiv.classList.add('cell--alive');
             }
-            if (board[i][j] === 0) {
+            if (cellStatus) {
                 childdiv.classList.add('cell--dead');
             }
 
