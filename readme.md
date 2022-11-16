@@ -8,11 +8,12 @@ Deberás de programar el [Juego de la vida de Conway](https://es.wikipedia.org/w
 
 Un resumen de las reglas:
 
--   Una célula viva sigue las siguientes reglas:
-    -   Si tiene menos de 2 células contiguas vivas, muere por "soledad".
-    -   Si tiene más de 3 células contiguas vivas, muere por "sobrepoblación".
-    -   Si tiene 2 o 3 células contiguas vivas, sobrevive.
--   Una célula muerta sigue la siguiente regla: Permanece muerta hasta que tiene exactamente 3 células contiguas vivas, momento en el que "nace".
+Una célula viva sigue las siguientes reglas:
+-Si tiene menos de 2 células contiguas vivas, muere por "soledad".
+-Si tiene más de 3 células contiguas vivas, muere por "sobrepoblación".
+-Si tiene 2 o 3 células contiguas vivas, sobrevive.
+
+Una célula muerta sigue la siguiente regla: Permanece muerta hasta que tiene exactamente 3 células contiguas vivas, momento en el que "nace".
 
 Si quieres probar como funciona para hacerte una idea, puedes probar una versión funcional en [esta página](https://playgameoflife.com/).
 
@@ -24,8 +25,8 @@ Si quieres probar como funciona para hacerte una idea, puedes probar una versió
 4. Debe utilizarse GitActions el workflow adjunto.
 5. Debe protegerse main en GitHub para que todo lo que se mergee pase por pull-request y que el workflow se cumpla.
 6. En el caso de llegar a HTML/CSS.
-   4.1. Se utilizará BEM/SASS.
-   4.2. Se debe desplegar a Netlify.
+    - Se utilizará BEM/SASS.
+    - Se debe desplegar a Netlify.
 
 ## Milestones
 
@@ -33,8 +34,8 @@ Si quieres probar como funciona para hacerte una idea, puedes probar una versió
 2. Programa 100% testeado.
 3. ✔️ Añadir HTML/CSS.
 4. Modificar JS para que:
-   a. Las células sigan avanzando al llegar a la pared y desaparezcan.
-   b. Las células salgan por un lado de la cuadrícula y aparezcan por el otro.
+    - Las células sigan avanzando al llegar a la pared y desaparezcan.
+    - Las células salgan por un lado de la cuadrícula y aparezcan por el otro.
 
 Deploy version: https://202210-w6-miguel-pgomez.netlify.app/
 
