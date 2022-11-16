@@ -10,7 +10,7 @@ import {
 // Config section
 const columns = 28;
 const rows = 28;
-const intervalTime = 1000;
+const intervalTime = 500;
 let startInterval = null;
 let board = smileBoard;
 

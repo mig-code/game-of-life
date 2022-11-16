@@ -1,9 +1,9 @@
 export function renderBoard(board) {
-    const parentdiv = document.getElementById('grid');
+    const parentdiv = document.querySelector('.board-container');
     parentdiv.innerHTML = '';
     for (let i = 1; i < board.length - 1; i++) {
         const row = document.createElement('div');
-        row.className = 'row';
+        row.className = 'board-container__row';
         parentdiv.appendChild(row);
         for (let j = 1; j < board[i].length - 1; j++) {
             const childdiv = document.createElement('div');
