@@ -29,17 +29,17 @@ export function copyBoard(board) {
     return boardCopy;
 }
 
-export function countNearCells(board, columns, row) {
+export function countNearCells(board, column, row) {
     let count = 0;
     count +=
-        board[row - 1][columns - 1] +
-        board[row - 1][columns] +
-        board[row - 1][columns + 1] +
-        board[row][columns - 1] +
-        board[row][columns + 1] +
-        board[row + 1][columns - 1] +
-        board[row + 1][columns] +
-        board[row + 1][columns + 1];
+        board[row - 1][column - 1] +
+        board[row - 1][column] +
+        board[row - 1][column + 1] +
+        board[row][column - 1] +
+        board[row][column + 1] +
+        board[row + 1][column - 1] +
+        board[row + 1][column] +
+        board[row + 1][column + 1];
     return count;
 }
 
