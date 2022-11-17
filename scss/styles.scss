@@ -113,15 +113,9 @@ body {
     font-size: 2rem;
     text-shadow: 2px 2px 0 variables.$color-secondary;
   }
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
 
-.nav-options {
+.menu-options {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
@@ -191,7 +185,7 @@ body {
   }
 }
 
-.shapes {
+.menu-shapes {
   display: flex;
   justify-content: center;
   align-items: center;
