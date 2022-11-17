@@ -29,17 +29,54 @@ export function copyBoard(board) {
     return boardCopy;
 }
 
-export function countNearCells(board, columns, row) {
+export function addBorderCells(board) {
+    for (let i = 1; i < board.length - 1; i++) {
+        for (let j = 1; j < board[i].length - 1; j++) {
+            const maxRow = board.length;
+            const maxColumn = board[i].length;
+            changeCornerCells(board, i, j, maxRow, maxColumn);
+
+            if (i === 1) {
+                board[i - 1][j] = board[maxColumn - 2][j];
+            }
+            if (i === maxRow - 2) {
+                board[i + 1][j] = board[1][j];
+            }
+            if (j === 1) {
+                board[i][j - 1] = board[i][maxRow - 2];
+            }
+            if (j === maxColumn - 2) {
+                board[i][j + 1] = board[i][1];
+            }
+        }
+    }
+}
+export function changeCornerCells(board, i, j, maxRow, maxColumn) {
+    if (i === 1 && j === 1) {
+        board[i - 1][j - 1] = board[maxColumn - 2][maxRow - 2];
+    }
+    if (i === 1 && j === maxColumn - 2) {
+        board[i - 1][j + 1] = board[maxColumn - 2][1];
+    }
+    if (i === maxRow - 2 && j === 1) {
+        board[i + 1][j - 1] = board[1][maxRow - 2];
+    }
+    if (i === maxRow - 2 && j === maxColumn - 2) {
+        board[i + 1][j + 1] = board[1][1];
+    }
+}
+
+export function countNearCells(board, column, row) {
     let count = 0;
     count +=
-        board[row - 1][columns - 1] +
-        board[row - 1][columns] +
-        board[row - 1][columns + 1] +
-        board[row][columns - 1] +
-        board[row][columns + 1] +
-        board[row + 1][columns - 1] +
-        board[row + 1][columns] +
-        board[row + 1][columns + 1];
+        board[row - 1][column - 1] +
+        board[row - 1][column] +
+        board[row - 1][column + 1] +
+        board[row][column - 1] +
+        board[row][column + 1] +
+        board[row + 1][column - 1] +
+        board[row + 1][column] +
+        board[row + 1][column + 1];
     return count;
 }
 
@@ -63,7 +100,7 @@ export function getNextBoard(board) {
     }
     return boardCopy;
 }
-export function getBoardtoRender(board) {
+export function getBoardtoRenderInConsole(board) {
     const boardToRender = [];
     for (let i = 1; i < board.length - 1; i++) {
         boardToRender.push([]);
