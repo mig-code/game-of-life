@@ -5,7 +5,7 @@ import {
     copyBoard,
     checkIfCellIsAlive,
     getNextBoard,
-    getBoardtoRender,
+    getBoardtoRenderInConsole,
 } from './functions.js';
 
 describe('Given createBoard function', () => {
@@ -212,11 +212,11 @@ describe('Given getNextBoard function', () => {
     });
 });
 
-describe('Given getBoardToRender function ', () => {
+describe('Given getBoardToRenderInConsole function ', () => {
     const columns = 6;
     const rows = 6;
     const board = createBoard(columns, rows);
-    const nextBoard = getBoardtoRender(board);
+    const nextBoard = getBoardtoRenderInConsole(board);
     test('Return a board with random 0 or 1 in cells and nulls in borders test [1][1]', () => {
         // Act
         const result = nextBoard[0][0];
