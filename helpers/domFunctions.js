@@ -9,7 +9,14 @@ export function renderBoard(board) {
             const childdiv = document.createElement('div');
             const position = board[i][j];
             childdiv.addEventListener('click', () => {
-                position === 0 ? (board[i][j] = 1) : (board[i][j] = 0);
+                if (position === 0) {
+                    board[i][j] = 1;
+                }
+                if (position === 1) {
+                    board[i][j] = 0;
+                }
+                // Old code:
+                // position === 0 ? (board[i][j] = 1) : (board[i][j] = 0);
                 renderBoard(board);
             });
             childdiv.className = 'cell';
