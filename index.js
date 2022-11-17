@@ -1,4 +1,8 @@
-import { createBoard, getNextBoard } from './helpers/functions.js';
+import {
+    createBoard,
+    getNextBoard,
+    addBorderCells,
+} from './helpers/functions.js';
 import { renderBoard } from './helpers/domFunctions.js';
 import {
     emptyBoard,
@@ -10,7 +14,7 @@ import {
 // Config section
 const columns = 28;
 const rows = 28;
-const intervalTime = 500;
+const intervalTime = 400;
 let startInterval = null;
 let board = smileBoard;
 
@@ -68,5 +72,6 @@ window.onload = () => {
 
 function startSimulation() {
     renderBoard(board);
+    addBorderCells(board);
     board = getNextBoard(board);
 }

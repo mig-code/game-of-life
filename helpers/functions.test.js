@@ -1,6 +1,7 @@
 import {
     createBoard,
     countNearCells,
+    addBorderCells,
     copyBoard,
     checkIfCellIsAlive,
     getNextBoard,
@@ -68,6 +69,33 @@ describe('Given copyBoard function', () => {
     });
 });
 
+describe('Given addBoardCells function', () => {
+    const board = [
+        [null, null, null, null, null, null],
+        [null, 3, 0, 2, 5, null],
+        [null, 0, 0, 0, 0, null],
+        [null, 1, 1, 0, 1, null],
+        [null, 0, 0, 0, 0, null],
+        [null, null, null, null, null, null],
+    ];
+
+    test('Return a board with border modifeds', () => {
+        // Arrange
+        const expected = [
+            [0, 0, 0, 0, 0, 0],
+            [5, 3, 0, 2, 5, 3],
+            [0, 0, 0, 0, 0, 0],
+            [1, 1, 1, 0, 1, 1],
+            [0, 0, 0, 0, 0, 0],
+            [5, 3, 0, 2, 5, 3],
+        ];
+
+        // Act
+        addBorderCells(board);
+        // Assert
+        expect(board).toEqual(expected);
+    });
+});
 describe('Given countNearCells function', () => {
     const testBoard = [
         [null, null, null, null, null],
