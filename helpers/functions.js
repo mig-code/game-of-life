@@ -111,3 +111,11 @@ export function getBoardtoRenderInConsole(board) {
     console.table(boardToRender);
     return boardToRender;
 }
+export function setCellStatus(position, i, j, board) {
+    if (position === 0) {
+        board[i][j] = 1;
+    }
+    if (position === 1) {
+        board[i][j] = 0;
+    }
+}

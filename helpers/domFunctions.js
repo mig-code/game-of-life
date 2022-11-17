@@ -1,3 +1,4 @@
+import { setCellStatus } from './functions.js';
 export function renderBoard(board) {
     const parentdiv = document.querySelector('.board-container');
     parentdiv.innerHTML = '';
@@ -9,14 +10,7 @@ export function renderBoard(board) {
             const childdiv = document.createElement('div');
             const position = board[i][j];
             childdiv.addEventListener('click', () => {
-                if (position === 0) {
-                    board[i][j] = 1;
-                }
-                if (position === 1) {
-                    board[i][j] = 0;
-                }
-                // Old code:
-                // position === 0 ? (board[i][j] = 1) : (board[i][j] = 0);
+                setCellStatus(position, i, j, board);
                 renderBoard(board);
             });
             childdiv.className = 'cell';
