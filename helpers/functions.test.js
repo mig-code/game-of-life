@@ -6,6 +6,7 @@ import {
     checkIfCellIsAlive,
     getNextBoard,
     getBoardtoRenderInConsole,
+    setCellStatus,
 } from './functions.js';
 
 describe('Given createBoard function', () => {
@@ -229,6 +230,40 @@ describe('Given getBoardToRenderInConsole function ', () => {
     test('Length should be 6', () => {
         const expected = 6;
         const result = nextBoard.length;
+        expect(result).toEqual(expected);
+    });
+});
+
+describe('Given setCellStatus function', () => {
+    const i = 0;
+    const j = 0;
+    const board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ];
+    test('If postion is 0 the board[0][0]=1', () => {
+        const position = 0;
+        // Arrange
+        const expected = 1;
+
+        // Act
+        setCellStatus(position, i, j, board);
+        const result = board[0][0];
+
+        // Assert
+        expect(result).toEqual(expected);
+    });
+    test('If postion is 1 the board[0][0]=0', () => {
+        const position = 1;
+        // Arrange
+        const expected = 0;
+
+        // Act
+        setCellStatus(position, i, j, board);
+        const result = board[0][0];
+
+        // Assert
         expect(result).toEqual(expected);
     });
 });
